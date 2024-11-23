@@ -27,7 +27,6 @@
             <artifactId>aws-lambda-java-events</artifactId>
             <version>3.11.0</version>
         </dependency>
-
     </dependencies>
 
     <build>
