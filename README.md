@@ -8,9 +8,10 @@ Build the Project: mvn clean package
 
 **Create Function Two** Upload the JAR to AWS Lambda and Set the handler to: **org.example.lambda1.FunctionTwoHandler**
 
-**Setup &Create API Gateway**
+**Setup & Create API Gateway**
 
 For Function One, create a route like /functionOne and map it to the first Lambda function.
+
 For Function Two, create a route like /functionTwo and map it to the second Lambda function.
 
 **Test the Functions**
