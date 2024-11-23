@@ -18,7 +18,7 @@ For Function Two, create a route like /functionTwo and map it to the second Lamb
 
 **Test FunctionOneHandler**
 
-curl -X POST -d "Hello Function One" https://<api-gateway-endpoint>/functionOne
+curl -X POST -d "Hello Function One" https://api-gateway-endpoint.com/functionOne
 
 **Expected Response**
 
@@ -26,7 +26,7 @@ Function One processed the request: Hello Function One
 
 **Test FunctionTwoHandler**
 
-curl -X POST -d "Hello Function Two" https://<api-gateway-endpoint>/functionTwo
+curl -X POST -d "Hello Function Two" https://api-gateway-endpoint.com/functionTwo
 
 **Expected Response**
 
@@ -56,7 +56,7 @@ Upload the generated JAR to AWS Lambda and Set the handler as: **org.example.lam
 
 **Test /functionOne**
 
-curl -X POST -d "Hello from Function One" https://<api-gateway-endpoint>/functionOne
+curl -X POST -d "Hello from Function One" https://api-gateway-endpoint.com/functionOne
 
 **Expected Output**
 
@@ -64,7 +64,7 @@ Function One processed: Hello from Function One
 
 **Test /functionTwo** 
 
-curl -X POST -d "Hello from Function Two" https://<api-gateway-endpoint>/functionTwo
+curl -X POST -d "Hello from Function Two" https://api-gateway-endpoint.com/functionTwo
 
 **Expected Output**
 
