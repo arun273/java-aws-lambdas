@@ -4,9 +4,9 @@ Build the Project: mvn clean package
 
 **Deploy to AWS Lambda**
 
-**Create Function One** Upload the JAR to AWS Lambda and Set the handler to: org.example.lambda1.FunctionOneHandler
+**Create Function One** Upload the JAR to AWS Lambda and Set the handler to: **org.example.lambda1.FunctionOneHandler**
 
-**Create Function Two** Upload the JAR to AWS Lambda and Set the handler to: org.example.lambda1.FunctionTwoHandler
+**Create Function Two** Upload the JAR to AWS Lambda and Set the handler to: **org.example.lambda1.FunctionTwoHandler**
 
 **Setup &Create API Gateway**
 
@@ -41,7 +41,7 @@ Build the Project: mvn clean package
 
 **Deploy to AWS Lambda**
 
-Upload the generated JAR to AWS Lambda and Set the handler as: org.example.lambda2.MainHandler
+Upload the generated JAR to AWS Lambda and Set the handler as: **org.example.lambda2.MainHandler**
 
 **Setup & Create an API Gateway 2 Routes**
 
