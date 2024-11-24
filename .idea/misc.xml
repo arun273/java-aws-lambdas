@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../springboot-aws-lambdas/springboot-aws-lambdas/pom.xml" />
         <option value="$PROJECT_DIR$/../springboot-aws-lambdas/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring-boot-aws-lambdas/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
