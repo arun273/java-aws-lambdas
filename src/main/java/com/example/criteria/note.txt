@@ -1,0 +1,88 @@
+Develop an optimized, reusable, and efficient solution using Java 17 to process request filters and generate responses based on specific criteria. The implementation should include all below steps 1,2,3 in single modulerized code for easy readable:
+
+1.Matching with status Attribute:
+
+Extract values from the request filter list where the key is "*" or is empty/null.
+Match these values with the status attribute in the response list.
+Return the corresponding applicationId along with its task status list (structured as List<List<Object>>).
+Design objects based on a sample response structure and implement logic accordingly.
+
+2. Matching with state and status Attributes:
+
+Process request filters where the key and value are non-empty/non-null.
+Match these values with both state and status attributes in the response list.
+Return the corresponding applicationId with its task status list, following the List<List<Object>> structure.
+Construct request and response objects accordingly.
+
+3. Handling Invalid Filter Criteria:
+
+If the key is non-empty/non-null but the value is empty/null, log a warning.
+Skip processing for that filter without attempting a match in the response.
+Ensure proper logging and iteration handling while maintaining an efficient execution flow.
+
+The implementation should be modular, reusable, and optimized, leveraging Java 17 features to efficiently process request-response mappings. Design given below request and response objects based on a structured example to ensure consistency and scalability and should have matched response in List<List<Object>> structure
+
+Pleas consider Request and Response is json string to build logic
+
+Request
+
+{
+  "applicationId": ["202545658975", "202545658974", "202545658988", "202545658995"],
+  "filter": [
+              {"key": "*", "value": "Completed"},
+			  {"key": "carCheck"},
+			  {"key": "autoCheck", "value": "Completed"},
+              {"key": "healthCheck", "value": "Under Review"},
+			  {"key": "*", "value": "Completed"},
+			  {"value": "In Progress"},
+			  {"value": "Not Started"}
+		]
+}
+
+Response
+
+[
+  {
+    "applicationId": "202545658975",
+    "tasks": [
+      { "state": "autoCheck", "status": "Not Started", "date": "2025-02-22T08:45:10Z" },
+      { "state": "healthCheck", "status": "Not Started", "date": "2025-02-22T06:45:10Z" },
+      { "state": "bikeCheck", "status": "In Progress", "date": "2025-02-22T02:45:10Z" },
+      { "state": "carCheck", "status": "Under Review", "date": "2025-02-22T07:45:10Z" },
+      { "state": "policyCheck", "status": "Completed", "date": "2025-02-22T10:45:10Z" },
+      { "state": "localCheck", "status": "Failed", "date": "2025-02-21T09:45:10Z" }
+    ]
+  },
+  {
+    "applicationId": "202545658988",
+    "tasks": [
+      { "state": "autoCheck", "status": "Not Started", "date": "2025-02-22T08:45:10Z" },
+      { "state": "healthCheck", "status": "Not Started", "date": "2025-02-22T06:45:10Z" },
+      { "state": "bikeCheck", "status": "In Progress", "date": "2025-02-22T02:45:10Z" },
+      { "state": "carCheck", "status": "Under Review", "date": "2025-02-22T07:45:10Z" },
+      { "state": "policyCheck", "status": "Completed", "date": "2025-02-22T10:45:10Z" },
+      { "state": "localCheck", "status": "Failed", "date": "2025-02-21T09:45:10Z" }
+    ]
+  }
+]
+
+
+Sample example structure of Reeturned response format
+
+{
+  "applications": [
+    [
+      { "applicationId": "202545658975", "state": "autoCheck", "status": "Not Started", "date": "2025-02-22T08:45:10Z" },
+      { "applicationId": "202545658975", "state": "healthCheck", "status": "Not Started", "date": "2025-02-22T06:45:10Z" },
+      { "applicationId": "202545658975", "state": "bikeCheck", "status": "In Progress", "date": "2025-02-22T02:45:10Z" },
+      { "applicationId": "202545658975", "state": "carCheck", "status": "Under Review", "date": "2025-02-22T07:45:10Z" },
+      { "applicationId": "202545658975", "state": "policyCheck", "status": "Completed", "date": "2025-02-22T10:45:10Z" },
+      { "applicationId": "202545658975", "state": "localCheck", "status": "Failed", "date": "2025-02-21T09:45:10Z" }
+    ],
+    [
+      { "applicationId": "202545658988", "state": "autoCheck", "status": "Not Started", "date": "2025-02-22T08:45:10Z" },
+      { "applicationId": "202545658988", "state": "healthCheck", "status": "Not Started", "date": "2025-02-22T06:45:10Z" },
+      { "applicationId": "202545658988", "state": "bikeCheck", "status": "In Progress", "date": "2025-02-22T02:45:10Z" }
+    ]
+  ]
+}
