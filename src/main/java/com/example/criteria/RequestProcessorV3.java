@@ -79,13 +79,7 @@ public class RequestProcessorV3 {
     /**
      * Encapsulates extracted filter data for better organization.
      */
-    private static class FilterData {
-        final Set<String> globalStatuses;
-        final Map<String, String> specificFilters;
+    private record FilterData(Set<String> globalStatuses, Map<String, String> specificFilters){
 
-        FilterData(Set<String> globalStatuses, Map<String, String> specificFilters) {
-            this.globalStatuses = globalStatuses;
-            this.specificFilters = specificFilters;
-        }
     }
 }
