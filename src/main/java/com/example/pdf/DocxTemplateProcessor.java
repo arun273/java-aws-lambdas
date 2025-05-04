@@ -13,6 +13,9 @@ public class DocxTemplateProcessor {
 
     public static void main(String[] args) {
         try {
+            String className = CallerInfoUtility.getCallingClassName();
+            String methodName = CallerInfoUtility.getCallingMethodName();
+            LoggingUtility log =  LoggingUtility.start(className, methodName);
             // Load the template.docx from resources using ClassLoader
             InputStream inputStream = DocxTemplateProcessor.class.getClassLoader().getResourceAsStream("file/notes.docx");
             if (inputStream == null) {
@@ -52,6 +55,7 @@ public class DocxTemplateProcessor {
 
             inputStream.close(); // Always close streams
 
+            log.logEnd();
             System.out.println("Document processed successfully and saved to ");
         } catch (IOException e) {
             e.printStackTrace();
